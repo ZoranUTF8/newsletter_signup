@@ -62,10 +62,13 @@ app.post("/", function(req, res) {
   app.post("/failure", function(req, res) {
     res.redirect("/");
   });
+  app.post("/success", function(req, res){
+    res.redirect("/");
+  })
 
   // IN CASE SIGNUP FAILED SENDS failure.html
   run().catch(e => res.sendFile(__dirname + "/failure.html"));
- 
+
 });
 
 // process.env.PORT ( dinamic port) heroku can chose the port || or localhost 3000
